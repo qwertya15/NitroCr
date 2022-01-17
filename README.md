@@ -1,13 +1,10 @@
 # ![NitroCr logo](NitroCr/images/icon32.png) NitroCr
 *"Boost Chrome (and productivity) with nitro power!"*
 
----
-
 ## How do I use it?
-
 *Note: This extension is intended for use with [Google Chrome](https://www.google.com/chrome/ "https://www.google.com/chrome/")*
 
-1. Download the `NitroCr` folder to somewhere on your computer
+1. Download the repository as a `.zip` file to somewhere on your computer
 2. Unzip the .zip file you just downloaded to somewhere also on your computer
 3. Go to chrome://extensions or Settings (three dots) → "More Tools" → "Extensions"
 4. Enable "Developer Mode" (top-right-corner switch)
@@ -30,5 +27,4 @@ _Shiny new stuff in `[v0.7]`_:
 ---
 
 ## Credits:
-
 See the 'credits.html' page for more info & attributions
