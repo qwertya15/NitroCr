@@ -25,7 +25,7 @@ nav>*:not(:first-child) {margin-left:8px;}
 #favi[src=""],#favi[src="undefined"] {background-image:url('images/no_favi.png'); border-color:#ff5678; border-style:dotted;}
 #opts {margin-left:auto;margin-right:5px;}
 main {
-display:flex; flex-direction:column; flex-wrap:nowrap; align-content:center;
+display:flex; flex-direction:column; flex-wrap:nowrap; align-content:center; text-align:center;
 justify-content:flex-start; align-items:center; width:70%; height:100%; margin:16px 8px 24px;
 box-shadow:0px 0px 12px -2px #eeffff63;  background-color:#eeffff63; border-radius:16px; padding:24px 8px;
 }

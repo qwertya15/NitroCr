@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "NitroCr",
-    "short_name": "N+Cr",
-    "version": "0.7",
+    "short_name": "NitroCr",
+    "version": "0.71",
     "action": {
       "default_icon": {
         "16": "images/icon16.png",
@@ -13,7 +13,7 @@
       "default_title": "NitroCr 🧪⚡",
       "default_popup": "popup.html"
     },
-    "description": "Boost Chromium (and productivity) with nitro power 🧪⚡!",
+    "description": "Boost Chrome (and productivity) with nitro power 🧪⚡!",
     "icons": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",
@@ -35,5 +35,6 @@
     "content_scripts": [ {
       "js": ["cscript.js"],
       "matches": ["*://*/*"]
-    } ]
+    } ],
+    "update_url": "https://github.com/qwertya15/NitroCr/blob/main/update.xml?raw=true"
   }

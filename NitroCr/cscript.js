@@ -13,23 +13,11 @@ ids: ['hdr','sidebar','fa','ezgif.com_728x90_middle_responsive'], classes: [], q
 'unicode-table.com': {
 ids: ['mobile-ad-with-closebtn'], classes: ['main__top-ad','page__ad-right','block-ad','roxot-dynamic-inited','roxot-dynamic'], qsa: []
 },
-'bonk.io': {
-ids: ['adboxverticalCurse','adboxverticalleftCurse'], classes: [], qsa: []
-},
-'vectr.com': {
-ids: [], classes: ['ads side'], qsa: []
-},
-'poptropica.com': {
-ids: ['left_wrapper','right_wrapper'], classes: [], qsa: []
-},
 'dictionary.com': {
 ids: [], classes: ['GoogleActiveViewElement','celtra-ad-inline-host'], qsa: []
 },
 'youtube.com': {
 ids: [], classes: ['ytp-paid-content-overlay','ytd-display-ad-renderer'], qsa: []
-},
-'physicsclassroom.com': {
-ids: ['rightAd'], classes: ['__fs-ancillary'], qsa: []
 },
 }, all2 =
 {
