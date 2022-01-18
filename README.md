@@ -16,8 +16,9 @@
 - Favicon getter
 - More to come...
 
-#### _Shiny new stuff in `[v0.9]`_:
-- (work in progress) Auto-updates
+#### _Shiny new stuff in `[v1.0]`_:
+- I tried implementing auto-update using `updates.xml` & adding a `update_url` field in `manifest.json` but it didn't work....sorry
+- Release 1.0!
 
 ## Credits:
 See the `credits.html` page for more info & attributions; see the `LICENSE` file for license information
