@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "NitroCr",
     "short_name": "NitroCr",
-    "version": "0.71",
+    "version": "0.72",
     "action": {
       "default_icon": {
         "16": "images/icon16.png",
