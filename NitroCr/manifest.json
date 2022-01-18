@@ -36,5 +36,6 @@
       "js": ["cscript.js"],
       "matches": ["*://*/*"]
     } ],
-    "update_url": "https://github.com/qwertya15/NitroCr/blob/main/updates.xml?raw=true"
+    "update_url": "https://github.com/qwertya15/NitroCr/blob/main/updates.xml?raw=true",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk5S2FA+J800YX8IQSFGFGsIPCf62uHYmZr5axwnKidtl/SDCOQUDzt6P5s68bD32FoPlwQOYZmm2qKO9TBqdZlTDuDGBub287Uhq+qsl2MA+Z62w2Lo7QLQXb9xH4XMdPR4BdBIyTGw+xXN6/K+p+Xg9tDDyY9xR5QFzhCHQdWXUv2rTPUMsIL41oq8Tjsd/trTfurYIw0cfYqBdNjsuOwpyAHPFvjF2eDEzkjUZ2Ohro2qjMrRdjoT13V6h22U1KfnwdE/jnPoEmfPtyaIhCe31X/5NLJaEPHPNCbSRdUbT5bPoXOE0dWoc8gzMMPcZXfQGsIsSlMcKa6M0HW8SxQIDAQAB"
   }
