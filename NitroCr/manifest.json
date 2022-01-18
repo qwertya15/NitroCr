@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "NitroCr",
     "short_name": "NitroCr",
-    "version": "0.72",
+    "version": "0.73",
     "action": {
       "default_icon": {
         "16": "images/icon16.png",
@@ -13,7 +13,7 @@
       "default_title": "NitroCr 🧪⚡",
       "default_popup": "popup.html"
     },
-    "description": "Boost Chrome (and productivity) with nitro power 🧪⚡! v0.72",
+    "description": "Boost Chrome (and productivity) with nitro power 🧪⚡! v0.73",
     "icons": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",
