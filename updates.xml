@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
     <app appid='pihghffpdlejknbbodpnbdolkeampgoh'>
-        <updatecheck codebase='https://raw.githubusercontent.com/qwertya15/NitroCr/main/NitroCr.crx' version='0.8'/>
+        <updatecheck codebase='https://raw.githubusercontent.com/qwertya15/NitroCr/main/NitroCr.crx' version='0.9'/>
     </app>
 </gupdate>

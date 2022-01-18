@@ -16,7 +16,7 @@
 - Favicon getter
 - More to come...
 
-#### _Shiny new stuff in `[v0.8]`_:
+#### _Shiny new stuff in `[v0.9]`_:
 - (work in progress) Auto-updates
 
 ## Credits:
