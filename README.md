@@ -16,8 +16,8 @@
 - Favicon getter
 - More to come...
 
-#### _Shiny new stuff in `[v0.71]`_:
-- (Hopefully) Auto-updates
+#### _Shiny new stuff in `[v0.8]`_:
+- (work in progress) Auto-updates
 
 ## Credits:
 See the `credits.html` page for more info & attributions; see the `LICENSE` file for license information
