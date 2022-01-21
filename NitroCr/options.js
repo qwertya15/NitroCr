@@ -4,7 +4,7 @@ let s3=s2.textContent,s4=String.fromCodePoint(0x1F4BE); s4=`${s4} Changes saved!
 let s5 = {
 'instantPage':'Inject instant.page pre-loader script',
 'peskyBuggers':'Block ads',
-'peskyBuggers2':'Click (anywhere on youtube\'s site) to skip/hide (most) YT ads',
+'peskyBuggers2':'(NOTE: may no longer work due to a YT update) Skip/hide (most) YT video/overlay ads when mouse is clicked',
 }
 chrome.storage.local.get(['settings'],(obj)=>{
   if (obj && obj.settings) {

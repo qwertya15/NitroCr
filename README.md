@@ -16,9 +16,8 @@
 - Favicon getter
 - More to come...
 
-#### _Shiny new stuff in `[v1.0]`_:
-- I tried implementing auto-update using `updates.xml` & adding a `update_url` field in `manifest.json` but it didn't work....sorry
-- Release 1.0!
+#### _Shiny new stuff in `[v1.1]`_:
+- YT seems to have started using a new method for ad-displaying & some parts of this extension's YT ad-block may stop doing anything noticeable until I fix it...
 
 ## Credits:
 See the `credits.html` page for more info & attributions; see the `LICENSE` file for license information
