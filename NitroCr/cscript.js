@@ -40,14 +40,18 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
         try {let b; if (b=document.querySelector('button.ytp-ad-overlay-close-button')) b.click();}
         catch (e){}
         try {
-          if (document.querySelector('span.ytp-ad-info-hover-text-button')) {
-            let p=document.querySelectorAll('video')[0].paused,y=window.scrollY;
-            await document.querySelector('span.ytp-ad-info-hover-text-button').click();
-            await document.querySelector('button.ytp-ad-info-dialog-mute-button').click();
-            await document.querySelector('button.ytp-ad-feedback-dialog-close-button').click();
-            if (p==true) {await document.querySelectorAll('video')[0].pause();}
-            window.scrollTo(window.scrollX??0,y??0);
-          }	
+          let p=document.querySelectorAll('video')[0].paused,y=window.scrollY;
+          if (document.querySelector('span.ytp-ad-info-hover-text-button'))
+            document.querySelectorAll(
+              ['span.ytp-ad-info-hover-text-button',
+              'button.ytp-ad-info-dialog-mute-button',
+              'button.ytp-ad-feedback-dialog-close-button'].join(',')
+            ).forEach(async(i)=>{try{await i.click();}catch(e){}});
+          if (document.querySelector('.ytp-ad-skip-button-container'))
+            document.querySelectorAll('.ytp-ad-skip-button-container,.ytp-ad-skip-button-slot')
+            .forEach(async(i)=>{try{await i.click();}catch(e){}});
+          if (p==true) {await document.querySelectorAll('video')[0].pause();}
+          window.scrollTo(window.scrollX??0,y??0);
         } catch (e){}
       };
     }
