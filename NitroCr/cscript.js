@@ -36,7 +36,8 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
     }
     if (obj.settings.peskyBuggers2) {
       window.onclick=async ()=>{
-        let p=document.querySelectorAll('video')[0],y=window.scrollY; if (p && p.paused) p=true;
+        let p=document.querySelectorAll('video')[0],y=window.scrollY;
+        p = (p && p.paused==true);
         try {let b; if (b=document.querySelector('button.ytp-ad-overlay-close-button')) b.click();}
         catch (e){}
         try {
@@ -50,7 +51,7 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
             document.querySelectorAll('.ytp-ad-skip-button-container,.ytp-ad-skip-button-slot')
             .forEach(async(i)=>{try{await i.click();}catch(e){}});
         } catch (e){}
-        if (p) {await document.querySelectorAll('video')[0].pause();}
+        if (p==true) {await document.querySelectorAll('video')[0].pause();}
         window.scrollTo(window.scrollX??0,y??0);
       };
     }
