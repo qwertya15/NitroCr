@@ -36,11 +36,10 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
     }
     if (obj.settings.peskyBuggers2) {
       window.onclick=async ()=>{
-        if (!document.querySelector('video')) return;
+        let p=document.querySelectorAll('video')[0],y=window.scrollY; if (p && p.paused) p=true;
         try {let b; if (b=document.querySelector('button.ytp-ad-overlay-close-button')) b.click();}
         catch (e){}
         try {
-          let p=document.querySelectorAll('video')[0].paused,y=window.scrollY;
           if (document.querySelector('span.ytp-ad-info-hover-text-button'))
             document.querySelectorAll(
               ['span.ytp-ad-info-hover-text-button',
@@ -50,9 +49,9 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
           if (document.querySelector('.ytp-ad-skip-button-container'))
             document.querySelectorAll('.ytp-ad-skip-button-container,.ytp-ad-skip-button-slot')
             .forEach(async(i)=>{try{await i.click();}catch(e){}});
-          if (p==true) {await document.querySelectorAll('video')[0].pause();}
-          window.scrollTo(window.scrollX??0,y??0);
         } catch (e){}
+        if (p) {await document.querySelectorAll('video')[0].pause();}
+        window.scrollTo(window.scrollX??0,y??0);
       };
     }
   }
