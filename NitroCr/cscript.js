@@ -61,13 +61,26 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
 
 
 chrome.runtime.onMessage.addListener((req,sender,rendRes)=>{
-  if (req && req.getFavi) {
-    chrome.storage.local.get(['favIconUrl'],(obj)=>{
-      if (obj && obj.favIconUrl) {
-        window.open(obj.favIconUrl,'_blank');
-        chrome.storage.local.remove('favIconUrl',()=>{});
-      } else
-        console.error('favIconUrl not found in local extension storage!');
-    });
+  if (req) {
+    if (req.getFavi) {
+      chrome.storage.local.get(['favIconUrl'],(obj)=>{
+        if (obj && obj.favIconUrl) {
+          window.open(obj.favIconUrl,'_blank');
+          chrome.storage.local.remove('favIconUrl',()=>{});
+        } else
+          console.error('favIconUrl not found in local extension storage!');
+      });
+    } else if (req.readText) {
+      chrome.storage.local.get(['text2Read'],(obj)=>{
+        if (obj && obj.text2Read != undefined) {
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak(
+            new SpeechSynthesisUtterance(text2Read)
+          );
+          chrome.storage.local.remove('text2Read',()=>{});
+        } else
+          console.error('text2Read not found in local extension storage!');
+      });
+    }
   }
 });

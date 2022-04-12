@@ -14,10 +14,11 @@
 ## What does it do?
 - Simple ad remover
 - Favicon getter
+- Simple text speaker
 - More to come...
 
-#### _Shiny new stuff in `[v1.1]`_:
-- YT seems to have started to implement a new method for displaying info for ads & some parts of this extension's YT ad-block may stop doing anything noticeable until I fix it...
+#### ***Shiny new stuff in [***`v1.2`***]:***
+- Speech synthesis using the **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API")**! Highlight/select text and right-click to try it out!
 
 ## Credits:
 See the `credits.html` page for more info & attributions; see the `LICENSE` file for license information

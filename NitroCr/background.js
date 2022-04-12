@@ -5,7 +5,20 @@ let ctxAct = {
     "contexts": ["all"],
     "onclick": function(info,tab){
       chrome.storage.local.set({'favIconUrl':tab.favIconUrl},()=>{});
-      chrome.tabs.sendMessage(tab.id,{'getFavi':true});
+      try {
+        chrome.tabs.sendMessage(tab.id,{'getFavi':true});
+      } catch (e) {consolewarn(e);}
+    },
+  },
+  "readText": {
+    "title": "🗣 Read '%s'",
+    "type": "normal",
+    "contexts": ["selection"],
+    "onclick": function(info,tab){
+      chrome.storage.local.set({'text2Read':info.selectionText??undefined},()=>{});
+      try {
+        chrome.tabs.sendMessage(tab.id,{'readText':true});
+      } catch (e) {consolewarn(e);}
     },
   },
   // etc.

@@ -4,6 +4,7 @@ html,body {
 padding:0px; margin:0px; width:256px; height:256px; border-radius:0px 0px 4px 4px; overflow:hidden;
 cursor:url('/images/cursor.png') 8 8, auto;
 }
+.pointer,a,button,img#favi {cursor:url('/images/cursor-pointer.png') 8 8, auto !important;}
 body {
 background: no-repeat linear-gradient(-135deg, #057bee 0%, #35b3cd 100%); align-items:center;
 box-shadow: inset 0px 0px 64px 2px #47dcfb;font-family:monospace; display:flex; flex-direction:column;
