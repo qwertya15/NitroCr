@@ -14,10 +14,10 @@
 ## What does it do?
 - Simple ad remover
 - Favicon getter
-- Simple text speaker
+- Simple text speaker (in progress)
 - More to come...
 
-#### ***Shiny new stuff in [***`v1.2`***]:***
+#### ***Shiny new stuff in [***`v1.3`***]:***
 - Speech synthesis using the **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API")**! Highlight/select text and right-click to try it out!
 
 ## Credits:

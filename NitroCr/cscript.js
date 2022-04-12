@@ -74,9 +74,11 @@ chrome.runtime.onMessage.addListener((req,sender,rendRes)=>{
       chrome.storage.local.get(['text2Read'],(obj)=>{
         if (obj && obj.text2Read != undefined) {
           window.speechSynthesis.cancel();
-          window.speechSynthesis.speak(
-            new SpeechSynthesisUtterance(text2Read)
-          );
+          if (obj.text2Read != '') {
+            window.speechSynthesis.speak(
+              new SpeechSynthesisUtterance(text2Read)
+            );
+          }
           chrome.storage.local.remove('text2Read',()=>{});
         } else
           console.error('text2Read not found in local extension storage!');

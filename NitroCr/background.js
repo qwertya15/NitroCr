@@ -15,7 +15,7 @@ let ctxAct = {
     "type": "normal",
     "contexts": ["selection"],
     "onclick": function(info,tab){
-      chrome.storage.local.set({'text2Read':info.selectionText??undefined},()=>{});
+      chrome.storage.local.set({'text2Read':String(info.selectionText)??''},()=>{});
       try {
         chrome.tabs.sendMessage(tab.id,{'readText':true});
       } catch (e) {consolewarn(e);}
