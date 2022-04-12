@@ -76,7 +76,7 @@ chrome.runtime.onMessage.addListener((req,sender,rendRes)=>{
           window.speechSynthesis.cancel();
           if (obj.text2Read != '') {
             window.speechSynthesis.speak(
-              new SpeechSynthesisUtterance(text2Read)
+              new SpeechSynthesisUtterance(obj.text2Read)
             );
           }
           chrome.storage.local.remove('text2Read',()=>{});
