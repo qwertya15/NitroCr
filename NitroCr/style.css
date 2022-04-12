@@ -1,4 +1,4 @@
-* {border-radius:4px; transition:box-shadow 0.2s, transform 0.2s; outline-color:#057bee !important;}
+*:not(img) {border-radius:4px; transition:box-shadow 0.2s, transform 0.2s; outline-color:#057bee !important;}
 button:active,a:active,input:active,.pointer:active {transform:scale(0.9);}
 button:hover:not(:active),button:focus-visible:not(:active),a:hover:not(:active),a:focus-visible:not(:active),
 input:hover:not(:active),input:focus-visible:not(:active),.pointer:hover:not(:active),.pointer:focus-visible:not(:active)
@@ -36,6 +36,7 @@ display:flex; flex-direction:column; flex-wrap:nowrap; align-content:center; tex
 justify-content:flex-start; align-items:center; width:70%; height:100%; margin:16px 8px 24px;
 box-shadow:0px 0px 12px -2px #eeffff63;  background-color:#eeffff63; border-radius:16px; padding:24px 8px;
 }
+a#update {color:#d7f8ff; background-color:#0064c5; padding:5px; margin:3px; border-radius:4px;}
 label[for] {font-size:2em;text-shadow:-1px 0px 3px #eeffff;}
 input[type="checkbox"] {width:24px; height:24px; display:inline;}
 i {font-size:1.6em;}

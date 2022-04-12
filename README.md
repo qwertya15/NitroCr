@@ -15,9 +15,11 @@
 - 🧼 Simple ad remover
 - 🌐 Favicon getter
 - 🗣 Simple text speaker
+- ℹ Checks for updates without using the extension store!
 - ✨ More to come...
 
-#### ***Shiny new stuff in [***`v1.3`***]:***
+#### ***Shiny new stuff in [***`v1.4`***]:***
+- Checks for updates when clicked! If a new version number is released, it will show an orange badge with the next version number on the icon & adds an 'Update Available!' link (leads to the GitHub repo) to the popup!
 - Speech synthesis using the **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API")**! Highlight/select text and right-click to try it out!
 
 ## Credits:
