@@ -14,8 +14,8 @@ chrome.storage.local.get(['settings'],(obj)=>{
       console.log('saved initial empty object');
     });
   for (let [i,j] of Object.entries(s5))
-    m.insertAdjacentHTML('beforeend',`<span class="pointer"><label for="${i}">${j}?</label>
-<input type="checkbox" id="${i}"/></span><br/>`);
+    m.insertAdjacentHTML('beforeend',`<span class="opt-con"><label for="${i}" class="pointer">${j}?</label>
+<input type="checkbox" id="${i}" class="pointer"/></span><br/>`);
   try {document.querySelector('noscript').remove();} catch(e){}
   for (let i of document.querySelectorAll('input[id]')) {
     if (s[i.id]==true || s[i.id]==false) i.checked=s[i.id];

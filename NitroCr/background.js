@@ -4,10 +4,10 @@ let ctxAct = {
     "type": "normal",
     "contexts": ["all"],
     "onclick": function(info,tab){
-      chrome.storage.local.set({'favIconUrl':tab.favIconUrl},()=>{});
       try {
+        chrome.storage.local.set({'favIconUrl':tab.favIconUrl},()=>{});
         chrome.tabs.sendMessage(tab.id,{'getFavi':true});
-      } catch (e) {consolewarn(e);}
+      } catch (e) {console.warn(e);}
     },
   },
   "readText": {
@@ -15,10 +15,10 @@ let ctxAct = {
     "type": "normal",
     "contexts": ["selection"],
     "onclick": function(info,tab){
-      chrome.storage.local.set({'text2Read':String(info.selectionText)??''},()=>{});
       try {
+        chrome.storage.local.set({'text2Read':String(info.selectionText)??''},()=>{});
         chrome.tabs.sendMessage(tab.id,{'readText':true});
-      } catch (e) {consolewarn(e);}
+      } catch (e) {console.warn(e);}
     },
   },
   // etc.

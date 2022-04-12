@@ -61,7 +61,7 @@ ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_
 
 
 chrome.runtime.onMessage.addListener((req,sender,rendRes)=>{
-  if (req) {
+  if (req) { try {
     if (req.getFavi) {
       chrome.storage.local.get(['favIconUrl'],(obj)=>{
         if (obj && obj.favIconUrl) {
@@ -84,5 +84,5 @@ chrome.runtime.onMessage.addListener((req,sender,rendRes)=>{
           console.error('text2Read not found in local extension storage!');
       });
     }
-  }
+  } catch (e) {console.warn(e);} }
 });
