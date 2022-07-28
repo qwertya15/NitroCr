@@ -33,11 +33,6 @@ chrome.storage.local.get(['settings'],(obj)=>{
           }
         for (let i of Object.keys(all)) if (location.href.indexOf(i)>-1) go(all[i].ids,all[i].classes,all[i].qsa);
         go(...Object.values(all2));
-        if (location.href.indexOf('youtube.com')>-1 && document.querySelector('div.ytp-ad-player-overlay')) {
-          try {
-            document.querySelector('ytd-player video').currentTime+=document.querySelector('ytd-player video').duration+1;
-          } catch (e){}
-        }
 
       }, 1000);
     }
@@ -57,6 +52,10 @@ chrome.storage.local.get(['settings'],(obj)=>{
           if (document.querySelector('.ytp-ad-skip-button-container'))
             document.querySelectorAll('.ytp-ad-skip-button-container,.ytp-ad-skip-button-slot')
             .forEach(async(i)=>{try{await i.click();}catch(e){}});
+          if (location.href.indexOf('youtube.com')>-1 && document.querySelector('div.ytp-ad-player-overlay'))
+            try {
+              document.querySelector('ytd-player video').currentTime+=document.querySelector('ytd-player video').duration+1;
+            } catch (e){}
         } catch (e){}
         if (p==true) {await document.querySelectorAll('video')[0].pause();}
         window.scrollTo(window.scrollX??0,y??0);
