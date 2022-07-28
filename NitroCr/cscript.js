@@ -6,31 +6,38 @@ chrome.storage.local.get(['settings'],(obj)=>{
     if (obj.settings.peskyBuggers) {
       setInterval(()=>{
         let all =
-{
-'ezgif.com': {
-ids: ['hdr','sidebar','fa','ezgif.com_728x90_middle_responsive'], classes: [], qsa: []
-},
-'unicode-table.com': {
-ids: ['mobile-ad-with-closebtn'], classes: ['main__top-ad','page__ad-right','block-ad','roxot-dynamic-inited','roxot-dynamic'], qsa: []
-},
-'dictionary.com': {
-ids: [], classes: ['GoogleActiveViewElement','celtra-ad-inline-host'], qsa: []
-},
-'youtube.com': {
-ids: [], classes: ['ytp-paid-content-overlay','ytd-display-ad-renderer'], qsa: []
-},
-}, all2 =
-{
-ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_ads\']','[aria-label=\'advertisement\']']
-}, go = (i,c,q)=>{
-  for (let j of i) try {document.getElementById(i).remove();} catch (e){}
-  for (let j of c) try {
-    for (let k of document.getElementsByClassName(j)) try{k.remove();} catch(e){}} catch (e){}
-  for (let j of q) try {
-    for (let k of document.querySelectorAll(j)) try{k.remove();} catch(e){}} catch (e){}
-}
-        for (let i of Object.keys(all)) if (location.href.indexOf(i)>-1||i=='*') go(all[i].ids,all[i].classes,all[i].qsa);
+          {
+            'ezgif.com': {
+              ids: ['hdr','sidebar','fa','ezgif.com_728x90_middle_responsive'], classes: [], qsa: []
+            },
+            'unicode-table.com': {
+              ids: ['mobile-ad-with-closebtn'], classes: ['main__top-ad','page__ad-right','block-ad','roxot-dynamic-inited','roxot-dynamic'], qsa: []
+            },
+            'dictionary.com': {
+              ids: [], classes: ['GoogleActiveViewElement','celtra-ad-inline-host'], qsa: []
+            },
+            'youtube.com': {
+              ids: ['sparkles-container','player-ads'], classes: ['ytp-paid-content-overlay','ytd-display-ad-renderer'], qsa: ['ytd-promoted-sparkles-web-renderer']
+            },
+          }, all2 =
+          {
+            ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_ads\']','[aria-label=\'advertisement\']']
+          }, go = (i,c,q)=>{
+            for (let j of i) try {document.getElementById(i).remove();} catch (e){}
+            for (let j of c) try {
+              for (let k of document.getElementsByClassName(j)) try{k.remove();} catch(e){}
+            } catch (e){}
+            for (let j of q) try {
+              for (let k of document.querySelectorAll(j)) try{k.remove();} catch(e){}
+            } catch (e){}
+          }
+        for (let i of Object.keys(all)) if (location.href.indexOf(i)>-1) go(all[i].ids,all[i].classes,all[i].qsa);
         go(...Object.values(all2));
+        if (location.href.indexOf('youtube.com')>-1 && document.querySelector('div.ytp-ad-player-overlay')) {
+          try {
+            document.querySelector('ytd-player video').currentTime+=document.querySelector('ytd-player video').duration+1;
+          } catch (e){}
+        }
 
       }, 1000);
     }
