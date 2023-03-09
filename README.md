@@ -15,7 +15,7 @@
 - 🧼 Simple ad remover (when page clicked)
 - 🌐 Favicon getter (add-on button)
 - 🗣 Simple text speaker (right-click menu)
-- ℹ Checks for updates without using the extension store!
+- ℹ Self-checks for updates when extension icon is clicked!
 - ✨ More to come...
 
 #### ***Shiny new stuff in [***`v1.5`***]:***

@@ -21,7 +21,7 @@ chrome.storage.local.get(['settings'],(obj)=>{
             },
           }, all2 =
           {
-            ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_ads\']','[aria-label=\'advertisement\']']
+            ids: [], classes: ['GoogleActiveViewClass','adsbygoogle'], qsa: ['[id*=\'google_ads\']','[aria-label=\'advertisement\']','.glacier-ad']
           }, go = (i,c,q)=>{
             for (let j of i) try {document.getElementById(i).remove();} catch (e){}
             for (let j of c) try {
