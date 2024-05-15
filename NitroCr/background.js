@@ -18,7 +18,16 @@ let ctxAct = {
       try {
         let s=info.selectionText;
         if (s!=null && (s=String(s)).length>0) {
-          chrome.tts.speak(s);
+          if (s.length>32768) {
+            // split into smaller queued substrings
+            let s1;
+            for (let i=0; i<s.length; i+=32767) {
+              s1=s.substring(i,i+32767);
+              chrome.tts.speak(s1, {'enqueue': true});
+            }
+          } else {
+            chrome.tts.speak(s);
+          }
         }
       } catch (e) {console.warn(e);}
     },
