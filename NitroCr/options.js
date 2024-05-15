@@ -1,38 +1,56 @@
-(()=>{ // hidden scope
-let s={},s2=document.querySelector('i'),m=document.querySelector('main');
-let s3=s2.textContent,s4=String.fromCodePoint(0x1F4BE); s4=`${s4} Changes saved! ${s4}`;
-let s5 = {
-'instantPage':'Inject instant.page pre-loader script',
-'peskyBuggers':'Block ads',
-'peskyBuggers2':'(NOTE: may no longer work due to a YT update) Skip/hide (most) YT video/overlay ads when mouse is clicked',
+(()=>{
+
+let s={},sh=document.querySelector('i'),m=document.querySelector('main');
+// text setup for the "Changes Saved!" header:
+let t0=sh.textContent,t1=String.fromCodePoint(0x1F4BE); t1=`${t1} Changes saved! ${t1}`;
+// labels for the settings:
+let sd = {
+  'instantPage':'Inject instant.page pre-loader script? (more info in credits page)',
+  'peskyBuggers':'Block (most) webpage ads?',
+  'peskyBuggers2':'(NOTE: may no longer work if YT\'s site changes)<br/>Skip/hide (most) YT ads (when mouse is clicked)?',
+  'updateChecks':'Check for version updates (only on extension\'s pages)?',
+  //'sitecache':'(wip...): try to use storage to cache websites?', // todo...
 }
-chrome.storage.local.get(['settings'],(obj)=>{
-  if (obj && obj.settings) {
-    s = obj.settings;
-  } else
-    chrome.storage.local.set({'settings':{}},()=>{
-      console.log('saved initial empty object');
-    });
-  for (let [i,j] of Object.entries(s5))
-    m.insertAdjacentHTML('beforeend',`<span class="opt-con"><label for="${i}" class="pointer">${j}?</label>
-<input type="checkbox" id="${i}" class="pointer"/></span><br/>`);
-  try {document.querySelector('noscript').remove();} catch(e){}
-  for (let i of document.querySelectorAll('input[id]')) {
-    if (s[i.id]==true || s[i.id]==false) i.checked=s[i.id];
-    i.oninput = ()=>{
-      console.log('saving...');
-      let s={};
-      chrome.storage.local.get(['settings'],(obj)=>{
-        if (obj && obj.settings) {
-          s = obj.settings;
-          s[i.id]=i.checked??false;
-          console.log(`${i.id} updated to ${i.checked??false}...`);
-          chrome.storage.local.set({'settings':s},()=>{
-            s2.textContent=s4; setTimeout(()=>{s2.textContent=s3;},1600);
-          });
-        }
-      });
+
+chrome.storage.local.get(['settings'],(rsp)=>{
+  if (rsp && rsp.settings) {
+    s = rsp.settings;
+    try {document.querySelector('noscript').remove();} catch(e){}
+    for (let [i,j] of Object.entries(sd))
+      m.insertAdjacentHTML('beforeend',`<div class="opt-con" style="opacity:0;"><label for="${i}" class="bounce">${j}</label>
+  <input type="checkbox" id="${i}" class="pointer"/></div><br/>`);
+    let t=0;
+    for (let j of document.querySelectorAll('.opt-con')) {
+      let i = j.querySelector('input');
+      setTimeout(()=>j.style.opacity="1",(++t)*100);
+      if (s[i.id]==true || s[i.id]==false) i.checked=s[i.id];
+      i.oninput = ()=>{
+        console.log('saving...');
+        let s={};
+        chrome.storage.local.get(['settings'],(rsp2)=>{
+          if (rsp2 && rsp2.settings) {
+            s = rsp2.settings;
+            s[i.id]=i.checked??false;
+            console.log(`${i.id} updated to ${i.checked??false}...`);
+            chrome.storage.local.set({'settings':s},()=>{
+              setTimeout(()=>{
+                j.classList.add('saved');
+                setTimeout(()=>j.classList.remove('saved'),800);
+                if (sh.textContent!=t1) {
+                  sh.textContent=t1;
+                  setTimeout(()=>{
+                    if (sh.textContent!=t0) sh.textContent=t0;
+                  },1000);
+                }
+              },250);
+            });
+          }
+        });
+      }
     }
+  } else {
+    return console.warn('unable to load extension settings...');
   }
 });
+
 })();

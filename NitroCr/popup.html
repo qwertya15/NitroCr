@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>NitroCr Popup</title>
-<link href="style.css" type="text/css" rel="stylesheet"/>
-</head>
-<body>
-<nav>
-<span title="NitroCr logo" id="logo"></span>
-<h2 id="title">NitroCr</h2>
-<img id="favi"/>
-<a id="opts" href="#" title="Extension options" draggable="false" class="bounce">
-<img draggable="false" src="images/settings.png"/>
-</a>
-</nav>
-<main>
-<a id="credits" href="#" title="Credits page" draggable="false" class="bounce">Credits</a>
-</main>
-<script src="popup.js"></script>
-<script src="common.js"></script>
-</body>
+    <head>
+        <title>NitroCr Popup</title>
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <span title="NitroCr logo" id="logo"></span>
+            <h2 class="title">NitroCr</h2>
+            <a class="no-bounce" href="#" target="_blank" title="Current page favicon"><img id="favi"/></a>
+            <a id="options-link" href="#" title="Extension options" draggable="false"><img draggable="false" src="images/settings.png"/></a>
+        </header>
+        <main>
+            <button id="stopSpeaking" disabled>Stop speaking</button>
+        </main>
+        <footer>
+            <a href="/credits.html" target="_blank" title="Credits page">Credits</a>
+            <a href="https://github.com/qwertya15/NitroCr" target="_blank" title="View repository on GitHub">Source</a>
+        </footer>
+        <script src="popup.js"></script>
+        <script src="common.js"></script>
+    </body>
 </html>
